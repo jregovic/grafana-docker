@@ -19,5 +19,7 @@ VOLUME ["/var/lib/grafana", "/var/lib/grafana/plugins", "/var/log/grafana", "/et
 EXPOSE 3000
 
 COPY ./run.sh /run.sh
+COPY docker-entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/run.sh"]
